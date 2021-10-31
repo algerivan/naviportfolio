@@ -1,7 +1,11 @@
+import React from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
 import styled from 'styled-components'
+import ReactAnime from 'react-animejs'
+import useWindowDimensions from '../../hooks/useWindowDimensions'
 
 const NavButton = styled(Button)`
   ${({ theme }) => `
@@ -25,21 +29,72 @@ const StyledToolBar = styled(Toolbar)`
     justify-content: flex-end;
   `}
 `
+const TopNavBar = styled(AppBar)`
+  ${({ theme }) => `
+    min-height: 3vh;
+  `}
+`
+
+const NameText = styled(Typography)`
+  ${({ theme }) => `
+      color: ${theme.palette.secondary.main};
+      flex-grow: 1;
+      @media (max-width: 767px) {
+        text-align:center;
+      }
+    `}
+`
+
+const ButtonsContainer = styled('div')`
+  ${({ theme }) => `
+      display:flex;
+      @media (max-width: 767px) {
+        display:none;
+      }
+    `}
+`
 
 export default function NavBar() {
+  const { Anime } = ReactAnime
+
+  const { width } = useWindowDimensions()
+
   return (
-    <AppBar elevation={0} position="static" color="primary">
+    <TopNavBar elevation={0} position="fixed" color="primary">
       <StyledToolBar>
-        <NavButton variant="text" color="secondary">
-          About Me
-        </NavButton>
-        <NavButton variant="text" color="secondary">
-          Works
-        </NavButton>
-        <NavButton variant="text" color="secondary">
-          Contact
-        </NavButton>
+        <Anime
+          _onMouseOver={[
+            {
+              targets: '#nametext',
+              scale: 1.2,
+              translateX: width < 768 ? 0 : 80,
+            },
+          ]}
+          _onMouseLeave={[
+            {
+              targets: '#nametext',
+              scale: 1,
+              translateX: 0,
+            },
+          ]}
+          style={{ flexGrow: 1 }}
+        >
+          <NameText id="nametext" variant="h6" component="div">
+            Alger Ivan Zamudio
+          </NameText>
+        </Anime>
+        <ButtonsContainer>
+          <NavButton className="navButton" variant="text" color="secondary">
+            About Me
+          </NavButton>
+          <NavButton className="navButton" variant="text" color="secondary">
+            Works
+          </NavButton>
+          <NavButton className="navButton" variant="text" color="secondary">
+            Contact
+          </NavButton>
+        </ButtonsContainer>
       </StyledToolBar>
-    </AppBar>
+    </TopNavBar>
   )
 }
