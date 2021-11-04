@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import NavBar from '../NavBar/NavBar'
 import Topics from './Topics'
 import Footer from './Footer'
+import SkillsSection from './SkillsSection'
 
 const styles = {
   firstSection: {
@@ -109,8 +110,11 @@ export default function MainPage() {
           </Anime>
         </MainText>
       </section>
-      <section style={{ marginTop: '-13vh' }}>
+      <section style={{ marginTop: '-13vh', marginBottom: '5vh' }}>
         <Topics />
+      </section>
+      <section>
+        <SkillsSection />
       </section>
       <section>
         <Footer />
