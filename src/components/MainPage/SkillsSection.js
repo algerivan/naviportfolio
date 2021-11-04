@@ -1,4 +1,5 @@
 import React from 'react'
+import { Typography } from '@mui/material'
 import styled from 'styled-components'
 
 const SkillsDiv = styled('div')`
@@ -6,13 +7,30 @@ const SkillsDiv = styled('div')`
     padding: 5;
     width: 100vw;
     height: 30vh;
-    background: #b7b7b7;
+    background: ${theme.palette.secondary.main};
     @media (max-width: 767px) {
       width:100vw;
     }
   `}
 `
 
+const SkillsTitle = styled(Typography)`
+  ${({ theme }) => `
+  padding: 2rem;
+  font-weight: bold;
+  background-color: #0f0f0f;
+  color: transparent;
+  text-shadow: 0px 2px 3px #4747477c;
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
+`}
+`
+
 export default function SkillsSection() {
-  return <SkillsDiv></SkillsDiv>
+  return (
+    <SkillsDiv>
+      <SkillsTitle variant="h3">Technical Skills</SkillsTitle>
+    </SkillsDiv>
+  )
 }

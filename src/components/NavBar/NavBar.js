@@ -67,7 +67,7 @@ export default function NavBar() {
             {
               targets: '#nametext',
               scale: 1.2,
-              translateX: width < 768 ? 0 : 80,
+              translateX: width < 768 ? 0 : '7vw',
             },
           ]}
           _onMouseLeave={[

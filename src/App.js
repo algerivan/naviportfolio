@@ -24,6 +24,16 @@ const theme = createTheme({
   },
 })
 
+theme.typography.h3 = {
+  fontSize: '1.7rem',
+  '@media (min-width:600px)': {
+    fontSize: '2rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '2.7rem',
+  },
+}
+
 function App() {
   return (
     <MuiThemeProvider theme={theme}>
