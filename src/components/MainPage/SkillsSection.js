@@ -48,6 +48,12 @@ export default function SkillsSection() {
         <ItemSkill></ItemSkill>
         <ItemSkill></ItemSkill>
         <ItemSkill></ItemSkill>
+        <ItemSkill></ItemSkill>
+        <ItemSkill></ItemSkill>
+        <ItemSkill></ItemSkill>
+        <ItemSkill></ItemSkill>
+        <ItemSkill></ItemSkill>
+        <ItemSkill></ItemSkill>
       </div>
     </SkillsDiv>
   )
