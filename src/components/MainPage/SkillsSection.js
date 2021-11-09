@@ -1,12 +1,15 @@
 import React from 'react'
-import { Typography } from '@mui/material'
+import { Typography, Grid } from '@mui/material'
 import styled from 'styled-components'
+
+import ItemSkill from './ItemSkill'
 
 const SkillsDiv = styled('div')`
   ${({ theme }) => `
     padding: 5;
     width: 100vw;
-    height: 30vh;
+    height: auto;
+    padding-bottom: 5vh;
     background: ${theme.palette.secondary.main};
     @media (max-width: 767px) {
       width:100vw;
@@ -31,6 +34,21 @@ export default function SkillsSection() {
   return (
     <SkillsDiv>
       <SkillsTitle variant="h3">Technical Skills</SkillsTitle>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          marginLeft: '3vw',
+        }}
+      >
+        <ItemSkill></ItemSkill>
+        <ItemSkill></ItemSkill>
+        <ItemSkill></ItemSkill>
+        <ItemSkill></ItemSkill>
+        <ItemSkill></ItemSkill>
+        <ItemSkill></ItemSkill>
+      </div>
     </SkillsDiv>
   )
 }
