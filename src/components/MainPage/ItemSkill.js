@@ -13,17 +13,15 @@ const trans = (x, y, s) =>
 
 const SkillImg = styled('img')`
   ${({ theme }) => `
-    height: 9vw;
-    width: 10vw;
-    min-height: 80px;
-    min-width: 80px;
+    width: 8vw;
+    min-width: 70px;
     margin: auto;
     align: center;
     filter: invert(11%) sepia(28%) saturate(6958%) hue-rotate(194deg) brightness(102%) contrast(102%);
   `}
 `
 
-export default function ItemSkill() {
+export default function ItemSkill({ img }) {
   const ref = useRef(null)
   const [xys, set] = useState([0, 0, 1])
   const config = {
@@ -50,8 +48,8 @@ export default function ItemSkill() {
       >
         <Paper
           sx={{
-            height: '10vw',
-            width: '10vw',
+            height: '9vw',
+            width: '9vw',
             display: 'flex',
             minHeight: '80px',
             minWidth: '80px',
@@ -60,10 +58,7 @@ export default function ItemSkill() {
           }}
           elevation={5}
         >
-          <SkillImg
-            align="center"
-            src="https://iconape.com/wp-content/files/pb/11670/png/react.png"
-          ></SkillImg>
+          <SkillImg align="center" src={img}></SkillImg>
         </Paper>
       </animated.div>
     </div>

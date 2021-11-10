@@ -8,6 +8,8 @@ import NavBar from '../NavBar/NavBar'
 import Topics from './Topics'
 import Footer from './Footer'
 import SkillsSection from './SkillsSection'
+import ProjectsSection from './ProjectsSection'
+import ContactSection from './ContactSection'
 
 const styles = {
   firstSection: {
@@ -115,6 +117,12 @@ export default function MainPage() {
       </section>
       <section>
         <SkillsSection />
+      </section>
+      <section>
+        <ProjectsSection />
+      </section>
+      <section>
+        <ContactSection />
       </section>
       <section>
         <Footer />
