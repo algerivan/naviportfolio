@@ -54,7 +54,7 @@ const ButtonsContainer = styled('div')`
     `}
 `
 
-export default function NavBar() {
+export default function NavBar({ aboutMeRef, contactRef, worksRef }) {
   const { Anime } = ReactAnime
 
   const { width } = useWindowDimensions()
@@ -85,12 +85,38 @@ export default function NavBar() {
         </Anime>
         <ButtonsContainer>
           <NavButton className="navButton" variant="text" color="secondary">
+            Download CV
+          </NavButton>
+          <NavButton
+            onClick={() =>
+              aboutMeRef.current.scrollIntoView({ behavior: 'smooth' })
+            }
+            className="navButton"
+            variant="text"
+            color="secondary"
+          >
             About Me
           </NavButton>
-          <NavButton className="navButton" variant="text" color="secondary">
+          <NavButton
+            onClick={() =>
+              worksRef.current.scrollIntoView({
+                behavior: 'smooth',
+              })
+            }
+            className="navButton"
+            variant="text"
+            color="secondary"
+          >
             Works
           </NavButton>
-          <NavButton className="navButton" variant="text" color="secondary">
+          <NavButton
+            onClick={() =>
+              contactRef.current.scrollIntoView({ behavior: 'smooth' })
+            }
+            className="navButton"
+            variant="text"
+            color="secondary"
+          >
             Contact
           </NavButton>
         </ButtonsContainer>

@@ -1,6 +1,8 @@
 import { Grid, Paper, Typography } from '@mui/material'
 import styled from 'styled-components'
 
+import WaveAnimation from './WaveAnimation'
+
 const TopicPaper = styled(Paper)`
   ${({ theme }) => `
     width: 80%;
@@ -16,7 +18,10 @@ const TopicPaper = styled(Paper)`
 export default function Topics() {
   return (
     <Grid spacing={2} container>
-      <Grid align="center" item xs={12} sm={4}>
+      <Grid item xs={12} sx={{ zIndex: 20 }}>
+        <WaveAnimation></WaveAnimation>
+      </Grid>
+      <Grid align="center" item xs={12} sm={4} sx={{ zIndex: 50 }}>
         <TopicPaper elevation={5}>
           <Typography variant="h6">BackEnd Development</Typography>
           <img
@@ -35,7 +40,7 @@ export default function Topics() {
           </Typography>
         </TopicPaper>
       </Grid>
-      <Grid item align="center" xs={12} sm={4}>
+      <Grid item align="center" xs={12} sm={4} sx={{ zIndex: 100 }}>
         <TopicPaper elevation={5}>
           <Typography variant="h6">FrontEnd Development</Typography>
           <img
@@ -55,7 +60,7 @@ export default function Topics() {
           </Typography>
         </TopicPaper>
       </Grid>
-      <Grid align="center" item xs={12} sm={4}>
+      <Grid align="center" item xs={12} sm={4} sx={{ zIndex: 90 }}>
         <TopicPaper elevation={5}>
           <Typography variant="h6">Server Management</Typography>
           <img

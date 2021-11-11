@@ -14,6 +14,18 @@ const ProjectsDiv = styled('div')`
     }
   `}
 `
+
+const ProjectsGrid = styled(Grid)`
+  ${({ theme }) => `
+    padding: 2vw;
+    background: ${theme.palette.secondary.main};
+    @media (min-width: 2000px) {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+  `}
+`
+
 const ProjectsTitle = styled(Typography)`
   ${({ theme }) => `
   padding: 2rem;
@@ -25,6 +37,9 @@ const ProjectsTitle = styled(Typography)`
   -webkit-background-clip: text;
      -moz-background-clip: text;
           background-clip: text;
+  @media (min-width: 2000px) {
+      padding-right: 5vw;
+    }
 `}
 `
 export default function ProjectsSection() {
@@ -33,7 +48,7 @@ export default function ProjectsSection() {
       <ProjectsTitle sx={{ marginBottom: '-7vh' }} variant="h3">
         My projects / Portfolio
       </ProjectsTitle>
-      <Grid align="center" sx={{ padding: 3 }} spacing={5} container>
+      <ProjectsGrid align="center" spacing={5} container>
         <Grid item xs={12} sm={6} md={4}>
           <ProjectItem
             projectId="1a"
@@ -62,7 +77,7 @@ export default function ProjectsSection() {
             name="Castorlab"
           ></ProjectItem>
         </Grid>
-      </Grid>
+      </ProjectsGrid>
     </ProjectsDiv>
   )
 }

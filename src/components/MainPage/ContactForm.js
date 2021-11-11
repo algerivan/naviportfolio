@@ -1,8 +1,20 @@
 import { TextField, Grid, Button } from '@mui/material'
+import styled from 'styled-components'
+
+const ContactFormGrid = styled(Grid)`
+  ${({ theme }) => `
+    padding-right: 5vw;
+    padding-left: 5vw;
+    @media (min-width: 2000px) {
+      padding-left: 5vw;
+      padding-right: 15vw;
+    }
+  `}
+`
 
 export default function ContactForm() {
   return (
-    <Grid component="form" noValidate autoComplete="off" container>
+    <ContactFormGrid component="form" noValidate autoComplete="off" container>
       <Grid item sx={{ padding: 3, marginTop: '-15px' }} xs={12} sm={6}>
         <TextField
           id="outlined-error"
@@ -34,6 +46,6 @@ export default function ContactForm() {
           Contact Me!
         </Button>
       </Grid>
-    </Grid>
+    </ContactFormGrid>
   )
 }

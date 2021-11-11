@@ -43,7 +43,9 @@ export default function ProjectItem({ projectId, img, name }) {
         <Card>
           <CardMedia
             component="img"
-            height="140"
+            sx={{
+              height: '25vh',
+            }}
             image={img}
             alt="green iguana"
           />

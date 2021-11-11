@@ -25,6 +25,19 @@ const ContactTitle = styled(Typography)`
 `}
 `
 
+const ContactInfoGrid = styled(Grid)`
+  ${({ theme }) => `
+    padding-left: 5vw;
+    @media (min-width: 2000px) {
+      padding-left: 15vw;
+      padding-right: 0vw;
+    }
+    @media (max-width: 767px) {
+      padding-right: 5vw;
+    }
+  `}
+`
+
 export default function ContactSection() {
   return (
     <ContactContainer>
@@ -35,7 +48,7 @@ export default function ContactSection() {
         style={{
           display: 'flex',
           justifyContent: 'center',
-          marginTop: '-5vh',
+          marginTop: '-25px',
         }}
       >
         <div
@@ -48,14 +61,14 @@ export default function ContactSection() {
         ></div>
       </div>
       <Grid container>
-        <Grid sx={{ padding: 4 }} xs={12} sm={4} item>
+        <ContactInfoGrid xs={12} sm={4} item>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, illo
             cupiditate recusandae quia ipsam consequuntur nostrum, dolor
             laudantium sunt, provident numquam aliquid illum ratione? Corporis
             officia quam fugit quae. Culpa!
           </p>
-        </Grid>
+        </ContactInfoGrid>
         <Grid xs={12} sm={8} item>
           <ContactForm />
         </Grid>

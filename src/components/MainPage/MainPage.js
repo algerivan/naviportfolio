@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import ReactAnime from 'react-animejs'
 import { CssBaseline, Typography } from '@mui/material'
 import { Scrollbars } from 'react-custom-scrollbars'
@@ -59,12 +59,19 @@ const textSpan2 = text2.split('').map((letter) => (
 
 export default function MainPage() {
   const { Anime } = ReactAnime
+  const aboutMeRef = useRef(null)
+  const worksRef = useRef(null)
+  const contactRef = useRef(null)
 
   return (
     <Scrollbars style={{ height: '100vh' }}>
       <CssBaseline />
-      <NavBar></NavBar>
-      <section style={styles.firstSection}>
+      <NavBar
+        aboutMeRef={aboutMeRef}
+        worksRef={worksRef}
+        contactRef={contactRef}
+      ></NavBar>
+      <section ref={aboutMeRef} style={styles.firstSection}>
         <MainText>
           <Anime
             initial={[
@@ -118,10 +125,10 @@ export default function MainPage() {
       <section>
         <SkillsSection />
       </section>
-      <section>
+      <section ref={worksRef}>
         <ProjectsSection />
       </section>
-      <section>
+      <section ref={contactRef}>
         <ContactSection />
       </section>
       <section>

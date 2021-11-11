@@ -14,6 +14,10 @@ const SkillsDiv = styled('div')`
     @media (max-width: 767px) {
       width:100vw;
     }
+    @media (min-width: 2000px) {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
   `}
 `
 
