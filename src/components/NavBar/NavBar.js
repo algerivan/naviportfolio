@@ -60,7 +60,7 @@ export default function NavBar({ aboutMeRef, contactRef, worksRef }) {
   const { width } = useWindowDimensions()
 
   return (
-    <TopNavBar elevation={0} position="fixed" color="primary">
+    <TopNavBar elevation={0} position="absolute" color="primary">
       <StyledToolBar>
         <Anime
           _onMouseOver={[

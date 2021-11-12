@@ -1,7 +1,9 @@
-import { Typography, Grid } from '@mui/material'
+import React, { useState } from 'react'
+import { Typography, Grid, Dialog } from '@mui/material'
 import styled from 'styled-components'
 
 import ProjectItem from './ProjectItem'
+import ProjectDialog from './ProjectDialog'
 
 const ProjectsDiv = styled('div')`
   ${({ theme }) => `
@@ -43,39 +45,54 @@ const ProjectsTitle = styled(Typography)`
 `}
 `
 export default function ProjectsSection() {
+  const [open, setOpen] = useState(false)
   return (
     <ProjectsDiv>
+      <ProjectDialog
+        title="Test Project"
+        open={open}
+        onClose={() => setOpen(false)}
+      />
       <ProjectsTitle sx={{ marginBottom: '-7vh' }} variant="h3">
         My projects / Portfolio
       </ProjectsTitle>
       <ProjectsGrid align="center" spacing={5} container>
         <Grid item xs={12} sm={6} md={4}>
-          <ProjectItem
-            projectId="1a"
-            img="https://miro.medium.com/max/2000/1*TEjMGT3zZKz2MaAZBZkXhw.png"
-            name="DashboarClean"
-          ></ProjectItem>
+          <div style={{ cursor: 'pointer' }} onClick={() => setOpen(true)}>
+            <ProjectItem
+              projectId="1a"
+              onClick={() => setOpen(true)}
+              img="https://miro.medium.com/max/2000/1*TEjMGT3zZKz2MaAZBZkXhw.png"
+              name="DashboarClean"
+            ></ProjectItem>
+          </div>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <ProjectItem
-            img="https://i.ytimg.com/vi/d6xn5uflUjg/maxresdefault.jpg"
-            projectId="2a"
-            name="GProG"
-          ></ProjectItem>
+          <div style={{ cursor: 'pointer' }} onClick={() => setOpen(true)}>
+            <ProjectItem
+              img="https://i.ytimg.com/vi/d6xn5uflUjg/maxresdefault.jpg"
+              projectId="2a"
+              name="GProG"
+            ></ProjectItem>
+          </div>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <ProjectItem
-            img="https://assets.justinmind.com/wp-content/uploads/2020/02/dashboard-example-applify.png"
-            projectId="3a"
-            name="Another Dashboard"
-          ></ProjectItem>
+          <div style={{ cursor: 'pointer' }} onClick={() => setOpen(true)}>
+            <ProjectItem
+              img="https://assets.justinmind.com/wp-content/uploads/2020/02/dashboard-example-applify.png"
+              projectId="3a"
+              name="Another Dashboard"
+            ></ProjectItem>
+          </div>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <ProjectItem
-            img="https://files.muzli.space/cfe00bbe88281b69f64839f987f5e30f.jpeg"
-            projectId="4a"
-            name="Castorlab"
-          ></ProjectItem>
+          <div style={{ cursor: 'pointer' }} onClick={() => setOpen(true)}>
+            <ProjectItem
+              img="https://files.muzli.space/cfe00bbe88281b69f64839f987f5e30f.jpeg"
+              projectId="4a"
+              name="Castorlab"
+            ></ProjectItem>
+          </div>
         </Grid>
       </ProjectsGrid>
     </ProjectsDiv>

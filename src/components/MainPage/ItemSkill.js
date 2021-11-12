@@ -1,7 +1,10 @@
+import React, { useContext } from 'react'
 import { Paper } from '@mui/material'
 import { useRef, useState } from 'react'
 import { useSpring, animated } from '@react-spring/web'
 import styled from 'styled-components'
+
+import SkillContext from '../../context/skills/SkillContext'
 
 const calc = (x, y, rect) => [
   -(y - rect.top - rect.height / 2) / 4,
@@ -21,7 +24,10 @@ const SkillImg = styled('img')`
   `}
 `
 
-export default function ItemSkill({ img }) {
+export default function ItemSkill({ img, name }) {
+  const skillsContext = useContext(SkillContext)
+  const { updateCurrentSkill } = skillsContext
+
   const ref = useRef(null)
   const [xys, set] = useState([0, 0, 1])
   const config = {
@@ -35,6 +41,14 @@ export default function ItemSkill({ img }) {
   }
 
   const props = useSpring({ xys, config })
+
+  const handleHover = (skillName) => {
+    updateCurrentSkill(skillName)
+  }
+
+  const handleMouseLeave = () => {
+    updateCurrentSkill(null)
+  }
 
   return (
     <div ref={ref}>
@@ -57,6 +71,8 @@ export default function ItemSkill({ img }) {
             margin: 2,
           }}
           elevation={5}
+          onMouseEnter={() => handleHover(name)}
+          onMouseLeave={handleMouseLeave}
         >
           <SkillImg align="center" src={img}></SkillImg>
         </Paper>

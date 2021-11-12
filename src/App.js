@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { createTheme, ThemeProvider as MuiThemeProvider } from '@mui/material'
 import { ThemeProvider } from 'styled-components'
 
+import SkillState from './context/skills/SkillState'
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -38,12 +40,14 @@ function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <ThemeProvider theme={theme}>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={MainPage} />
-            <Route path="/contact" component={ContactPage} />
-          </Switch>
-        </Router>
+        <SkillState>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={MainPage} />
+              <Route path="/contact" component={ContactPage} />
+            </Switch>
+          </Router>
+        </SkillState>
       </ThemeProvider>
     </MuiThemeProvider>
   )

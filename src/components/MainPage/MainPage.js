@@ -10,6 +10,7 @@ import Footer from './Footer'
 import SkillsSection from './SkillsSection'
 import ProjectsSection from './ProjectsSection'
 import ContactSection from './ContactSection'
+import Spark from './Spark'
 
 const styles = {
   firstSection: {
@@ -72,6 +73,9 @@ export default function MainPage() {
         contactRef={contactRef}
       ></NavBar>
       <section ref={aboutMeRef} style={styles.firstSection}>
+        {[...Array(50)].map((elem, index) => (
+          <Spark key={index}></Spark>
+        ))}
         <MainText>
           <Anime
             initial={[
