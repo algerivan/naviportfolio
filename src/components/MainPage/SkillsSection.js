@@ -126,12 +126,12 @@ export default function SkillsSection() {
           img="https://i2.wp.com/www.mementotech.in/assets/images/icons/express.png"
         ></ItemSkill>
         <ItemSkill
-          name="EXPRESS 2"
-          img="https://i2.wp.com/www.mementotech.in/assets/images/icons/express.png"
+          name="JSON"
+          img="https://cdn-icons-png.flaticon.com/512/136/136443.png"
         ></ItemSkill>
         <ItemSkill
-          name="EXPRESS 3"
-          img="https://i2.wp.com/www.mementotech.in/assets/images/icons/express.png"
+          name="XML"
+          img="https://cdn-icons-png.flaticon.com/512/51/51337.png"
         ></ItemSkill>
       </div>
     </SkillsDiv>

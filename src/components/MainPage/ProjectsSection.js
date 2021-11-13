@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Typography, Grid, Dialog } from '@mui/material'
+import { Typography, Grid } from '@mui/material'
 import styled from 'styled-components'
 
 import ProjectItem from './ProjectItem'
