@@ -1,0 +1,13 @@
+version: '3'
+services:
+  naviportfolio:
+    container_name: naviportfolio-container
+    build: .
+    ports:
+      - 8082:80
+    networks:
+      - mainproxy
+networks:
+  mainproxy:
+    external:
+      name: mainproxy
