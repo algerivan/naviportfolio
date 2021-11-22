@@ -3,6 +3,7 @@ WORKDIR /app
 COPY . .
 RUN npm install
 RUN npm run build
+RUN ls
 
 #Prod environment
 FROM nginx:stable-alpine

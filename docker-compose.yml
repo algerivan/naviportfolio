@@ -2,7 +2,10 @@ version: '3'
 services:
   naviportfolio:
     container_name: naviportfolio-container
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: build
     ports:
       - 8082:80
     networks:
