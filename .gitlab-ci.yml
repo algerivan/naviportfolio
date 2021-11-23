@@ -41,8 +41,7 @@ expose:
     - apk update && apk add openssh-client
     - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "cd $CONTAINERS_PATH"
     - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "cp $CONTAINERS_PATH/naviportfolio-container/nginx/proxy/naviportfolio-container.conf $CONTAINERS_PATH/nginx-proxy/nginx/conf.d"
-    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "cd $CONTAINERS_PATH/nginx-proxy"
-    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker-compose restart"
+    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "cd $CONTAINERS_PATH/nginx-proxy && docker-compose restart"
   environment:
     name: production
     url: http://algerzm.me
