@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import ItemSkill from './ItemSkill'
 import SkillContext from '../../context/skills/SkillContext'
+import { skills } from '../../data/skillsData'
 
 const SkillsDiv = styled('div')`
   ${({ theme }) => `
@@ -69,70 +70,9 @@ export default function SkillsSection() {
           padding: 2,
         }}
       >
-        <ItemSkill
-          name="React JS"
-          img="https://iconape.com/wp-content/files/pb/11670/png/react.png"
-        ></ItemSkill>
-        <ItemSkill
-          name="HTML 5"
-          img="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/HTML5_logo_black.svg/2048px-HTML5_logo_black.svg.png"
-        ></ItemSkill>
-        <ItemSkill
-          name="CSS 3"
-          img="https://cdn.iconscout.com/icon/free/png-256/css-124-624920.png"
-        ></ItemSkill>
-        <ItemSkill
-          name="JavaScritp"
-          img="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Unofficial_JavaScript_logo.svg/480px-Unofficial_JavaScript_logo.svg.png"
-        ></ItemSkill>
-        <ItemSkill
-          name="Vue JS"
-          img="https://iconape.com/wp-content/png_logo_vector/cib-vue-js.png"
-        ></ItemSkill>
-        <ItemSkill
-          name="Node JS"
-          img="https://img.icons8.com/windows/512/nodejs.png"
-        ></ItemSkill>
-        <ItemSkill
-          name="C#"
-          img="https://hushaamshah.github.io/pics/Csharp1.png"
-        ></ItemSkill>
-        <ItemSkill
-          name="PHP"
-          img="http://www.luiscobian.com.mx/wp-content/uploads/2018/08/php-512.png"
-        ></ItemSkill>
-        <ItemSkill
-          name="PostgreSQL"
-          img="https://iconape.com/wp-content/png_logo_vector/cib-postgresql.png"
-        ></ItemSkill>
-        <ItemSkill
-          name="SQL Server"
-          img="https://datamajor.net/wp-content/uploads/2018/10/Sql-Server-Black-ed.png"
-        ></ItemSkill>
-        <ItemSkill
-          name="MongoDB"
-          img="https://png.pngtree.com/svg/20170216/mongodb_1014590.png"
-        ></ItemSkill>
-        <ItemSkill
-          name="GraphQL"
-          img="https://cdn.iconscout.com/icon/free/png-256/graphql-3445627-2878559.png"
-        ></ItemSkill>
-        <ItemSkill
-          name="REST API"
-          img="https://icon-library.com/images/icon-api/icon-api-10.jpg"
-        ></ItemSkill>
-        <ItemSkill
-          name="EXPRESS JS"
-          img="https://i2.wp.com/www.mementotech.in/assets/images/icons/express.png"
-        ></ItemSkill>
-        <ItemSkill
-          name="JSON"
-          img="https://cdn-icons-png.flaticon.com/512/136/136443.png"
-        ></ItemSkill>
-        <ItemSkill
-          name="XML"
-          img="https://cdn-icons-png.flaticon.com/512/51/51337.png"
-        ></ItemSkill>
+        {skills.map(({ name, image }) => (
+          <ItemSkill name={name} img={image}></ItemSkill>
+        ))}
       </div>
     </SkillsDiv>
   )

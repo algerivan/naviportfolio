@@ -3,6 +3,7 @@ import ReactAnime from 'react-animejs'
 import { CssBaseline, Typography } from '@mui/material'
 import { Scrollbars } from 'react-custom-scrollbars'
 import styled from 'styled-components'
+import ProjectState from '../../context/projects/ProjectState'
 
 import NavBar from '../NavBar/NavBar'
 import Topics from './Topics'
@@ -130,7 +131,9 @@ export default function MainPage() {
         <SkillsSection />
       </section>
       <section ref={worksRef}>
-        <ProjectsSection />
+        <ProjectState>
+          <ProjectsSection />
+        </ProjectState>
       </section>
       <section ref={contactRef}>
         <ContactSection />

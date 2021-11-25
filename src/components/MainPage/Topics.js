@@ -21,61 +21,70 @@ export default function Topics() {
       <Grid item xs={12} sx={{ zIndex: 20 }}>
         <WaveAnimation></WaveAnimation>
       </Grid>
-      <Grid align="center" item xs={12} sm={4} sx={{ zIndex: 50 }}>
+      <Grid align="center" item xs={12} md={4} sx={{ zIndex: 50 }}>
         <TopicPaper elevation={5}>
           <Typography variant="h6">BackEnd Development</Typography>
           <img
-            src="https://cdn-icons-png.flaticon.com/512/2166/2166823.png"
+            src="http://navizm.com/images/topics/backend.png"
             alt="2021-10-29-15h40-26"
             border="0"
-            width={200}
             style={{
               marginTop: 10,
+              maxWidth: '300px',
+              minWidth: '150px',
+              width: '20vw',
             }}
           ></img>
           <Typography sx={{ marginTop: 3 }} variant="overline">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo
-            asperiores quam sed animi nulla optio tempore a, delectus nostrum
-            nihil?
+            I've been working on Front-End development from the beginnig, I love
+            doing simple and web beautiful designs using different frameworks
+            like VueJS and ReactJS, I'm still learning with every project to
+            strengthen my Front-End skills.
           </Typography>
         </TopicPaper>
       </Grid>
-      <Grid item align="center" xs={12} sm={4} sx={{ zIndex: 100 }}>
+      <Grid item align="center" xs={12} md={4} sx={{ zIndex: 100 }}>
         <TopicPaper elevation={5}>
           <Typography variant="h6">FrontEnd Development</Typography>
           <img
-            src="https://i.pinimg.com/originals/3e/be/5d/3ebe5d119ac707cd463cabbba214c8f6.png"
+            src="http://navizm.com/images/topics/frontend.png"
             alt="2021-10-29-15h40-26"
             border="0"
-            width={280}
             style={{
               marginTop: 10,
+              maxWidth: '300px',
+              minWidth: '150px',
+              width: '20vw',
             }}
           ></img>
 
           <Typography sx={{ marginTop: 3 }} variant="overline">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo
-            asperiores quam sed animi nulla optio tempore a, delectus nostrum
-            nihil?
+            I've worked backend with .NET Core, JavaScript and PHP making REST
+            APIS, WebSockets, etc. With different frameworks on each technology,
+            based on the project architechture. I'm proud to say that this is my
+            stronges skill.
           </Typography>
         </TopicPaper>
       </Grid>
-      <Grid align="center" item xs={12} sm={4} sx={{ zIndex: 90 }}>
+      <Grid align="center" item xs={12} md={4} sx={{ zIndex: 90 }}>
         <TopicPaper elevation={5}>
           <Typography variant="h6">Server Management</Typography>
           <img
-            src="https://cdn3.iconfinder.com/data/icons/web-hosting-5/128/17-512.png"
+            src="http://navizm.com/images/topics/servers.png"
             alt="2021-10-29-15h40-26"
             border="0"
-            width={200}
             style={{
               marginTop: 10,
+              maxWidth: '300px',
+              minWidth: '150px',
+              width: '20vw',
             }}
           ></img>
           <Typography sx={{ marginTop: 3 }} variant="overline">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo
-            asperiores quam sed animi nulla optio tempore a, delectus nostrum
-            nihil?
+            I've been hosting by myself all my personal projects, using
+            different technologies, such as Docker, Docker-Compose, Kubernetes
+            and NGINX as a web server and Reverse-Proxy, implementing CI/CD
+            Pipelines with GitLab and Docker for testing and deployment.
           </Typography>
         </TopicPaper>
       </Grid>

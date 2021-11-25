@@ -19,7 +19,7 @@ export default function ContactForm() {
         <TextField
           id="outlined-error"
           label="Full Name"
-          defaultValue="Hello World"
+          placeholder="What's your name?"
           fullWidth
         />
       </Grid>
@@ -27,7 +27,7 @@ export default function ContactForm() {
         <TextField
           id="outlined-error"
           label="Email"
-          defaultValue="Hello World"
+          placeholder="Write your email ;)"
           fullWidth
         />
       </Grid>
@@ -37,7 +37,7 @@ export default function ContactForm() {
           label="Content"
           multiline
           rows={4}
-          defaultValue="Default Value"
+          placeholder="Your message here! :D"
           fullWidth
         />
       </Grid>

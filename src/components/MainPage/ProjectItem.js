@@ -16,7 +16,7 @@ const calc = (x, y, rect) => [
 ]
 const trans = (x, y, s) => `scale(${s})`
 
-export default function ProjectItem({ projectId, img, name }) {
+export default function ProjectItem({ img, name }) {
   const ref = useRef(null)
   const [xys, set] = useState([0, 0, 1])
   const config = {
@@ -47,7 +47,7 @@ export default function ProjectItem({ projectId, img, name }) {
               height: '25vh',
             }}
             image={img}
-            alt="green iguana"
+            alt={`image ${name}`}
           />
           <CardContent
             sx={{

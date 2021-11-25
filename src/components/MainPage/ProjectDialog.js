@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Dialog, Typography, Grid, Stack, Chip, Button } from '@mui/material'
 import styled from 'styled-components'
+import ProjectContext from '../../context/projects/ProjectContext'
 
 const MainDialog = styled(Dialog)`
   ${({ theme }) => `
@@ -8,18 +9,17 @@ const MainDialog = styled(Dialog)`
   `}
 `
 
-const DialogContainer = styled(Grid)`
-  ${({ theme }) => `
-    padding: 5;
-    display:flex;
-    flex-direction: row;
-    @media (max-width: 767px) {
-      width:95vw;
-    }
-  `}
-`
+export default function ProjectDialog({ open, onClose }) {
+  const projectsContext = useContext(ProjectContext)
+  const { currentProject } = projectsContext
 
-export default function ProjectDialog({ title, open, onClose }) {
+  if (!currentProject) {
+    return null
+  }
+
+  const { technologies, name, description, liveDemoUrl, codeUrl, image } =
+    currentProject
+
   return (
     <MainDialog maxWidth="lg" open={open} onClose={onClose}>
       <Grid container>
@@ -27,8 +27,7 @@ export default function ProjectDialog({ title, open, onClose }) {
           item
           sx={{
             height: '50vh',
-            background:
-              'url(https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-material-ui/argon-dashboard-material-ui.jpg) no-repeat center',
+            background: `url(${image}) no-repeat center`,
             backgroundSize: 'cover',
           }}
           xs={12}
@@ -37,41 +36,52 @@ export default function ProjectDialog({ title, open, onClose }) {
         <Grid item xs={12} md={6}>
           <Grid container>
             <Grid item sx={{ padding: 5 }} xs={12}>
-              <Typography variant="h6">{title}</Typography>
+              <Typography variant="h6">{name}</Typography>
             </Grid>
             <Grid sx={{ padding: 5, marginTop: '-70px' }} item xs={12}>
-              <Stack direction="row" spacing={1}>
-                <Chip label="ReactJS" size="small" color="secondary"></Chip>
-                <Chip label="NodeJS" size="small" color="secondary"></Chip>
-                <Chip label="RestAPI" size="small" color="secondary"></Chip>
-                <Chip label="Nginx" size="small" color="secondary"></Chip>
-                <Chip label="Docker" size="small" color="secondary"></Chip>
+              <Stack
+                flexWrap="wrap"
+                direction="row"
+                alignItems="flex-start"
+                spacing={1}
+              >
+                {technologies.map((tec) => (
+                  <Chip
+                    key={tec}
+                    label={tec}
+                    size="small"
+                    color="secondary"
+                    sx={{
+                      marginBottom: '8px',
+                    }}
+                  ></Chip>
+                ))}
               </Stack>
             </Grid>
             <Grid sx={{ padding: 5, marginTop: '-40px' }} item xs={12}>
-              <Typography variant="body1">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod,
-                inventore placeat illum iure rerum dolor, quisquam quis velit
-                mollitia reiciendis ad porro commodi quae similique officiis!
-                Quidem temporibus tenetur, molestias natus eum quaerat dolorem
-                iure vero debitis deserunt doloremque corporis?
-              </Typography>
+              <Typography variant="body1">{description}</Typography>
             </Grid>
             <Grid item sx={{ padding: 5, marginTop: '-30px' }} xs={12}>
               <Button
                 variant="contained"
+                href={codeUrl}
+                target="_blank"
                 sx={{ marginRight: '1rem', borderRadius: '20px' }}
               >
-                Hola Perro
+                View Code
               </Button>
-              <Button
-                variant="contained"
-                sx={{
-                  borderRadius: '20px',
-                }}
-              >
-                Hola Perro 2
-              </Button>
+              {liveDemoUrl ? (
+                <Button
+                  variant="contained"
+                  href={liveDemoUrl}
+                  target="_blank"
+                  sx={{
+                    borderRadius: '20px',
+                  }}
+                >
+                  Live Demo
+                </Button>
+              ) : null}
             </Grid>
           </Grid>
         </Grid>

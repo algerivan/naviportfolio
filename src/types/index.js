@@ -1,2 +1,5 @@
 //Skills types
 export const UPDATE_CURRENT_SKILL = 'UPDATE_CURRENT_SKILL'
+
+//Projects types
+export const UPDATE_CURRENT_PROJECT = 'UPDATE_CURRENT_PROJECT'
