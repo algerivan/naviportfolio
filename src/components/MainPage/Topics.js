@@ -22,7 +22,12 @@ export default function Topics() {
         <WaveAnimation></WaveAnimation>
       </Grid>
       <Grid align="center" item xs={12} md={4} sx={{ zIndex: 50 }}>
-        <TopicPaper elevation={5}>
+        <TopicPaper
+          elevation={5}
+          sx={{
+            height: '60vh',
+          }}
+        >
           <Typography variant="h6">BackEnd Development</Typography>
           <img
             src="http://navizm.com/images/topics/backend.png"
@@ -36,15 +41,20 @@ export default function Topics() {
             }}
           ></img>
           <Typography sx={{ marginTop: 3 }} variant="overline">
-            I've been working on Front-End development from the beginnig, I love
-            doing simple and web beautiful designs using different frameworks
-            like VueJS and ReactJS, I'm still learning with every project to
-            strengthen my Front-End skills.
+            I've worked backend with .NET Core, JavaScript and PHP making REST
+            APIS, WebSockets, etc. With different frameworks on each technology,
+            based on the project architechture. I'm proud to say that this is my
+            strongest skill.
           </Typography>
         </TopicPaper>
       </Grid>
       <Grid item align="center" xs={12} md={4} sx={{ zIndex: 100 }}>
-        <TopicPaper elevation={5}>
+        <TopicPaper
+          sx={{
+            height: '60vh',
+          }}
+          elevation={5}
+        >
           <Typography variant="h6">FrontEnd Development</Typography>
           <img
             src="http://navizm.com/images/topics/frontend.png"
@@ -57,17 +67,21 @@ export default function Topics() {
               width: '20vw',
             }}
           ></img>
-
           <Typography sx={{ marginTop: 3 }} variant="overline">
-            I've worked backend with .NET Core, JavaScript and PHP making REST
-            APIS, WebSockets, etc. With different frameworks on each technology,
-            based on the project architechture. I'm proud to say that this is my
-            stronges skill.
+            I've been working on Front-End development from the beginnig, I love
+            doing simple and beautiful web designs using different frameworks
+            like VueJS and ReactJS, I'm still learning with every project to
+            strengthen my Front-End skills.
           </Typography>
         </TopicPaper>
       </Grid>
       <Grid align="center" item xs={12} md={4} sx={{ zIndex: 90 }}>
-        <TopicPaper elevation={5}>
+        <TopicPaper
+          sx={{
+            height: '60vh',
+          }}
+          elevation={5}
+        >
           <Typography variant="h6">Server Management</Typography>
           <img
             src="http://navizm.com/images/topics/servers.png"
