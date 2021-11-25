@@ -12,6 +12,32 @@ const TopicPaper = styled(Paper)`
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    height: 600px;
+    max-height: 650px;
+    
+    @media (max-width: 1800px) {
+      height: 600px;
+    }
+
+    @media (max-width: 1100px) {
+      height: 700px;
+    }
+
+    @media (max-width: 940px) {
+      height: 700px;
+    }
+
+    @media (max-width: 900px) {
+      height: 700px;
+    }
+
+    @media (max-width: 899px) {
+      height: 400px;
+    }
+
+    @media (max-width: 600px) {
+      height: 450px;
+    }
   `}
 `
 
@@ -22,12 +48,7 @@ export default function Topics() {
         <WaveAnimation></WaveAnimation>
       </Grid>
       <Grid align="center" item xs={12} md={4} sx={{ zIndex: 50 }}>
-        <TopicPaper
-          elevation={5}
-          sx={{
-            height: '60vh',
-          }}
-        >
+        <TopicPaper elevation={5}>
           <Typography variant="h6">BackEnd Development</Typography>
           <img
             src="http://navizm.com/images/topics/backend.png"
@@ -49,12 +70,7 @@ export default function Topics() {
         </TopicPaper>
       </Grid>
       <Grid item align="center" xs={12} md={4} sx={{ zIndex: 100 }}>
-        <TopicPaper
-          sx={{
-            height: '60vh',
-          }}
-          elevation={5}
-        >
+        <TopicPaper elevation={5}>
           <Typography variant="h6">FrontEnd Development</Typography>
           <img
             src="http://navizm.com/images/topics/frontend.png"
@@ -76,12 +92,7 @@ export default function Topics() {
         </TopicPaper>
       </Grid>
       <Grid align="center" item xs={12} md={4} sx={{ zIndex: 90 }}>
-        <TopicPaper
-          sx={{
-            height: '60vh',
-          }}
-          elevation={5}
-        >
+        <TopicPaper elevation={5}>
           <Typography variant="h6">Server Management</Typography>
           <img
             src="http://navizm.com/images/topics/servers.png"
